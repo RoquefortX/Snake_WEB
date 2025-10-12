@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx = canvas.getContext('2d');
     
     // Load high score from localStorage
-    highScore = parseInt(localStorage.getItem('snakeHighScore') || '0');
+    highScore = parseInt(localStorage.getItem('snakeHighScore') || '0', 10);
     document.getElementById('highScore').textContent = highScore;
     
     // Button event listeners
