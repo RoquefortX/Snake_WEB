@@ -27,4 +27,4 @@ jobs:
       # Шаг 4. Запуск тестов внутри контейнера
       - name: Run tests
         run: |
-          docker run --rm myapp:latest python -m pytest Snake_WEB/tests_app.py -v
+          docker run --rm myapp:latest python -m pytest /app/tests_app.py -v
