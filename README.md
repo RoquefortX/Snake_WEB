@@ -7,8 +7,7 @@
 
 ## Демонстрация
 
-<!-- Место для GIF с демонстрацией игры -->
-<!-- ![Demo](demo.gif) -->
+![Snake_web_GP_demo](https://github.com/user-attachments/assets/49b94426-7775-46a8-a4d1-f4828583e8fd)
 
 ## Возможности
 
