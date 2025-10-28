@@ -1,4 +1,6 @@
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![CI](https://github.com/RoquefortX/Snake_WEB/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/RoquefortX/Snake_WEB/actions/workflows/ci.yml)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue?logo=python)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 # Snake_WEB
 
 A classic Snake game built with Flask, HTML5 Canvas, and JavaScript.
