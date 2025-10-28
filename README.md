@@ -1,3 +1,4 @@
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 # Snake_WEB
 
 A classic Snake game built with Flask, HTML5 Canvas, and JavaScript.
