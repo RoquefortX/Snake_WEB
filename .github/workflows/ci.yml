@@ -2,29 +2,27 @@ name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "ci-test" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "ci-test" ]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      # Шаг 1. Клонируем репозиторий
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # Шаг 2. Устанавливаем Docker
-      - name: Set up Docker
-        uses: docker/setup-buildx-action@v2
+      # Поднимаем сервисы через Docker Compose
+      - name: Start services with Docker Compose
+        run: docker compose up -d --build web
 
-      # Шаг 3. Сборка Docker-образа
-      - name: Build Docker image
-        run: |
-          docker build -t myapp:latest .
-
-      # Шаг 4. Запуск тестов внутри контейнера
+      # Запускаем тесты внутри контейнера
       - name: Run tests
-        run: |
-          docker run --rm myapp:latest python -m pytest /app/tests_app.py -v
+        run: docker compose exec -T web python -m pytest /app/tests_app.py -v
+
+      # Останавливаем и очищаем контейнеры и ресурсы в любом случае
+      - name: Stop services
+        if: always()
+        run: docker compose down --volumes --remove-orphans
