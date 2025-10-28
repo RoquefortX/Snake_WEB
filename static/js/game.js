@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 // Game constants
 const CANVAS_SIZE = 400;
 const GRID_SIZE = 20;
