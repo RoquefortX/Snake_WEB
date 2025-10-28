@@ -3,23 +3,28 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 # Snake_WEB
 
-A classic Snake game built with Flask, HTML5 Canvas, and JavaScript.
+Классическая игра "Змейка", созданная с использованием Flask, HTML5 Canvas и JavaScript.
 
-## Features
+## Демонстрация
 
-- Classic snake gameplay
-- Score tracking with high score persistence
-- Pause/Resume functionality
-- Responsive design
-- Keyboard controls (arrow keys)
-- Visual snake head with eyes
-- Game over detection
+<!-- Место для GIF с демонстрацией игры -->
+<!-- ![Demo](demo.gif) -->
 
-## Setup Instructions
+## Возможности
 
-### Option 1: Using Docker (Recommended)
+- Классический геймплей змейки
+- Отслеживание очков с сохранением рекорда
+- Функция паузы/возобновления игры
+- Адаптивный дизайн
+- Управление с клавиатуры (стрелки)
+- Визуальная голова змеи с глазами
+- Определение конца игры
 
-#### Using Docker Compose
+## Инструкции по установке
+
+### Вариант 1: Использование Docker (рекомендуется)
+
+#### Использование Docker Compose
 
 ```bash
 git clone https://github.com/RoquefortX/Snake_WEB.git
@@ -27,91 +32,91 @@ cd Snake_WEB
 docker-compose up
 ```
 
-The game will be available at `http://localhost:5000`
+Игра будет доступна по адресу `http://localhost:5000`
 
-#### Using Docker directly
+#### Использование Docker напрямую
 
 ```bash
 docker build -t snake-game .
 docker run -p 5000:5000 snake-game
 ```
 
-### Option 2: Local Python Setup
+### Вариант 2: Локальная установка Python
 
-#### 1. Clone the repository
+#### 1. Клонируйте репозиторий
 
 ```bash
 git clone https://github.com/RoquefortX/Snake_WEB.git
 cd Snake_WEB
 ```
 
-#### 2. Create and activate virtual environment
+#### 2. Создайте и активируйте виртуальное окружение
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # На Windows: venv\Scripts\activate
 ```
 
-#### 3. Install dependencies
+#### 3. Установите зависимости
 
 ```bash
 pip install -r requirements.txt
 ```
 
-#### 4. Run the application
+#### 4. Запустите приложение
 
 ```bash
 python app.py
 ```
 
-The game will be available at `http://127.0.0.1:5000`
+Игра будет доступна по адресу `http://127.0.0.1:5000`
 
-## How to Play
+## Как играть
 
-- Use arrow keys (↑ ↓ ← →) to control the snake
-- Eat the red food to grow and earn points
-- Don't hit the walls or yourself!
-- Press Space to pause/resume
-- Click "Start Game" to begin
-- Click "Reset" to restart the game
+- Используйте стрелки (↑ ↓ ← →) для управления змейкой
+- Ешьте красную еду, чтобы расти и набирать очки
+- Не врезайтесь в стены и в себя!
+- Нажмите пробел для паузы/возобновления
+- Нажмите "Начать игру" для начала игры
+- Нажмите "Сброс" для перезапуска игры
 
-## Project Structure
+## Структура проекта
 
 ```
 Snake_WEB/
-├── app.py                 # Flask application
-├── requirements.txt       # Python dependencies
-├── Dockerfile            # Docker container configuration
-├── docker-compose.yml    # Docker Compose configuration
-├── .dockerignore         # Docker ignore file
-├── tests_app.py          # Application tests
+├── app.py                 # Flask приложение
+├── requirements.txt       # Python зависимости
+├── Dockerfile            # Конфигурация Docker контейнера
+├── docker-compose.yml    # Конфигурация Docker Compose
+├── .dockerignore         # Файл игнорирования Docker
+├── tests_app.py          # Тесты приложения
 ├── templates/
-│   └── index.html        # Game HTML template
+│   └── index.html        # HTML шаблон игры
 └── static/
     ├── css/
-    │   └── style.css     # Game styling
+    │   └── style.css     # Стили игры
     └── js/
-        └── game.js       # Game logic
+        └── game.js       # Логика игры
 ```
 
-## Technologies Used
+## Используемые технологии
 
 - **Backend**: Flask 3.0.0
 - **Frontend**: HTML5 Canvas, CSS3, Vanilla JavaScript
-- **Testing**: pytest 7.4.3
-- **Containerization**: Docker, Docker Compose
+- **Тестирование**: pytest 7.4.3
+- **Контейнеризация**: Docker, Docker Compose
 
 ## API Endpoints
 
-- `GET /` - Main game page
-- `GET /health` - Health check endpoint (returns `{"status": "ok"}`)
+- `GET /` - Главная страница игры
+- `GET /health` - Endpoint проверки состояния (возвращает `{"status": "ok"}`)
 
-## Running Tests
+## Запуск тестов
 
 ```bash
 pytest tests_app.py -v
 ```
 
-## Development
+## Разработка
 
-The application includes a health check endpoint at `/health` for monitoring purposes. When running with Docker Compose, the application is configured for development mode with volume mounting for live code updates.
+Приложение включает endpoint проверки состояния `/health` для целей мониторинга. При запуске с Docker Compose приложение настроено для режима разработки с монтированием томов для обновления кода в реальном времени.
